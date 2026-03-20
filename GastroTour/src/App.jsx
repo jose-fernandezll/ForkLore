@@ -40,9 +40,9 @@ function App() {
         <About data={currentRegion} />
         <Routes data={currentRegion} />
         <TrustVendors data={currentRegion} />
-        <Contact />
+        <Contact siteName="ForkLore" />
       </main>
-      <Footer />
+      <Footer siteName="ForkLore" />
     </div>
   );
 }

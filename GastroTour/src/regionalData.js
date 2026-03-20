@@ -11,7 +11,7 @@ export const regions = [
     heroSubtitle: 'From high-end coastal restaurants to hidden street gems, discover the authentic flavors and vibrant commerce of the Golden Gate of Colombia.',
     heroImage: barranquillaHero,
     aboutTitle: 'The Golden Gate to Authentic Experiences',
-    aboutText: 'GastroTour is more than a culinary guide; it\'s a bridge to the vibrant soul of Barranquilla. We showcase the perfect blend of high-end restaurants, traditional commerce, and those specialized street flavors that define our identity.',
+    aboutText: 'ForkLore is more than a culinary guide; it\'s a bridge to the vibrant soul of Barranquilla. We showcase the perfect blend of high-end restaurants, traditional commerce, and those specialized street flavors that define our identity.',
     palette: {
       primary: '#D62828', // Red
       secondary: '#003049', // Blue
