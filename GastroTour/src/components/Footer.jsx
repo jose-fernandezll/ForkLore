@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="container footer-content">
         <div className="footer-brand">
-          <div className="logo">Gastro<span>Tour</span></div>
+          <div className="logo">Fork<span>Lore</span></div>
           <p>Connecting you to the true flavors of our heritage, one bite at a time.</p>
         </div>
         <div className="footer-links">
@@ -26,7 +26,7 @@ const Footer = () => {
       </div>
       <div className="footer-bottom">
         <div className="container">
-          <p>&copy; 2024 GastroTour. All rights reserved. Created with ❤️ for our culture.</p>
+          <p>&copy; 2024 ForkLore. All rights reserved. Created with ❤️ for our culture.</p>
         </div>
       </div>
     </footer>
