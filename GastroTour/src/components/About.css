@@ -1,0 +1,64 @@
+.about {
+  background-color: var(--background);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-text p {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  color: var(--text-light);
+}
+
+.about-stats {
+  display: flex;
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.stat-item h3 {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.about-visual {
+  position: relative;
+  height: 500px;
+}
+
+.visual-card {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  padding: 3rem;
+  width: 80%;
+  z-index: 2;
+  border-radius: 20px;
+}
+
+.visual-accent {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  width: 70%;
+  height: 80%;
+  background: var(--accent);
+  border-radius: 30px;
+  opacity: 0.3;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-visual {
+    height: 300px;
+  }
+}

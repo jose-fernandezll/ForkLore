@@ -1,0 +1,31 @@
+.toast {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  z-index: 2000;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  animation: slideIn 0.5s ease forwards;
+  border-left: 5px solid var(--primary);
+}
+
+.toast.success {
+  border-left-color: #4CAF50;
+}
+
+.toast-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.toast-icon {
+  font-weight: bold;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}

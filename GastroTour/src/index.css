@@ -1,0 +1,118 @@
+:root {
+  --primary: #D62828; /* Deep Barranquilla Red */
+  --primary-dark: #AD1F1F;
+  --secondary: #003049; /* Deep Caribbean Blue */
+  --accent: #FCBF49; /* Golden Coast Yellow */
+  --background: #FDFCF0; /* Warm Sun Cream */
+  --card-bg: rgba(255, 255, 255, 0.8);
+  --text: #1A1A1A; /* Premium Charcoal */
+  --text-light: #555555;
+  --white: #ffffff;
+  --glass: rgba(255, 255, 255, 0.25);
+  --glass-border: rgba(255, 255, 255, 0.3);
+  --shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.1);
+  
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+.App {
+  transition: background-color 0.8s ease, color 0.5s ease;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background-color 0.8s ease;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  color: var(--secondary);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: var(--font-body);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade {
+  animation: fadeIn 1s ease forwards;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(224, 122, 95, 0.3);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(224, 122, 95, 0.4);
+}
+
+section {
+  padding: 8rem 0;
+}
+
+.section-title {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.section-subtitle {
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  display: block;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2.2rem;
+  }
+  section {
+    padding: 4rem 0;
+  }
+}

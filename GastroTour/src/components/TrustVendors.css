@@ -1,0 +1,58 @@
+.vendors {
+  background-color: var(--background);
+}
+
+.vendors-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.vendors-image {
+  position: relative;
+}
+
+.vendors-image img {
+  width: 100%;
+  border-radius: 30px;
+  box-shadow: var(--shadow);
+}
+
+.trust-badge {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background: var(--secondary);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-weight: 600;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.vendors-content p {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  color: var(--text-light);
+}
+
+.benefits-list {
+  list-style: none;
+  margin-bottom: 3rem;
+}
+
+.benefits-list li {
+  margin-bottom: 1rem;
+  font-weight: 500;
+  color: var(--secondary);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .vendors-grid {
+    grid-template-columns: 1fr;
+  }
+}
