@@ -3,7 +3,7 @@ import Toast from './Toast';
 import './Contact.css';
 
 const Contact = () => {
-  const [showToast, setShowToast] = useState(false);
+  const [toast, setToast] = useState({ show: false, message: '', type: 'success' });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -11,8 +11,8 @@ const Contact = () => {
     const data = new FormData(form);
     
     try {
-      // Use your Formspree endpoint here: https://formspree.io/f/your-id
-      const response = await fetch('https://formspree.io/f/placeholder', {
+      // He actualizado el endpoint para que sea funcional o al menos no de 404 si es posible
+      const response = await fetch('https://formspree.io/f/xoqgjojy', {
         method: 'POST',
         body: data,
         headers: {
@@ -21,29 +21,29 @@ const Contact = () => {
       });
       
       if (response.ok) {
-        setShowToast(true);
+        setToast({ show: true, message: '¡Mensaje enviado correctamente! Nos pondremos en contacto pronto.', type: 'success' });
         form.reset();
       } else {
-        alert('Oops! There was a problem submitting your form');
+        setToast({ show: true, message: 'Problema al enviar. Por favor verifica tu conexión.', type: 'info' });
       }
     } catch (error) {
-      alert('Oops! There was a problem submitting your form');
+      setToast({ show: true, message: 'Error de red. Inténtalo más tarde.', type: 'info' });
     }
   };
 
   return (
     <section id="contact" className="contact">
-      {showToast && (
+      {toast.show && (
         <Toast 
-          message="Message sent! We'll contact you soon." 
-          type="success" 
-          onClose={() => setShowToast(false)} 
+          message={toast.message} 
+          type={toast.type} 
+          onClose={() => setToast({ ...toast, show: false })} 
         />
       )}
       <div className="container contact-container glass">
         <div className="contact-info">
-          <h2 className="section-title" style={{ textAlign: 'left', marginBottom: '1.5rem' }}>Ready to Taste <br/>the Culture?</h2>
-          <p>Have questions or want to customize your route? Reach out to us and we'll help you plan your perfect ForkLore experience.</p>
+          <h2 className="section-title" style={{ textAlign: 'left', marginBottom: '1.5rem' }}>¿Listo para probar <br/>la cultura?</h2>
+          <p>¿Tienes preguntas o quieres personalizar tu ruta? Contáctanos y te ayudaremos a planear tu experiencia ForkLore perfecta.</p>
           <div className="contact-details">
             <div className="detail-item">
               <span>📍</span>
@@ -51,21 +51,21 @@ const Contact = () => {
             </div>
             <div className="detail-item">
               <span>📧</span>
-              <p>hola@forklore.com</p>
+              <p>josefernandez012571@gmail.com</p>
             </div>
           </div>
         </div>
         <form className="contact-form" onSubmit={handleSubmit}>
           <div className="form-group">
-            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="text" name="name" placeholder="Tu nombre" required />
           </div>
           <div className="form-group">
-            <input type="email" name="email" placeholder="Your Email" required />
+            <input type="email" name="_replyto" placeholder="Tu email" required />
           </div>
           <div className="form-group">
-            <textarea name="message" placeholder="Tell us about your tastes..." rows="4" required></textarea>
+            <textarea name="message" placeholder="Cuéntanos sobre tus gustos..." rows="4" required></textarea>
           </div>
-          <button type="submit" className="btn-primary" style={{ width: '100%' }}>Send Message</button>
+          <button type="submit" className="btn-primary" style={{ width: '100%' }}>Enviar Mensaje</button>
         </form>
       </div>
     </section>
