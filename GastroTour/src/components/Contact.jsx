@@ -9,17 +9,17 @@ const Contact = () => {
     e.preventDefault();
     const form = e.target;
     const data = new FormData(form);
-    
+
     try {
       // He actualizado el endpoint para que sea funcional o al menos no de 404 si es posible
-      const response = await fetch('https://formspree.io/f/xoqgjojy', {
+      const response = await fetch('https://formspree.io/f/xpqynepr', {
         method: 'POST',
         body: data,
         headers: {
           'Accept': 'application/json'
         }
       });
-      
+
       if (response.ok) {
         setToast({ show: true, message: '¡Mensaje enviado correctamente! Nos pondremos en contacto pronto.', type: 'success' });
         form.reset();
@@ -34,15 +34,15 @@ const Contact = () => {
   return (
     <section id="contact" className="contact">
       {toast.show && (
-        <Toast 
-          message={toast.message} 
-          type={toast.type} 
-          onClose={() => setToast({ ...toast, show: false })} 
+        <Toast
+          message={toast.message}
+          type={toast.type}
+          onClose={() => setToast({ ...toast, show: false })}
         />
       )}
       <div className="container contact-container glass">
         <div className="contact-info">
-          <h2 className="section-title" style={{ textAlign: 'left', marginBottom: '1.5rem' }}>¿Listo para probar <br/>la cultura?</h2>
+          <h2 className="section-title" style={{ textAlign: 'left', marginBottom: '1.5rem' }}>¿Listo para probar <br />la cultura?</h2>
           <p>¿Tienes preguntas o quieres personalizar tu ruta? Contáctanos y te ayudaremos a planear tu experiencia ForkLore perfecta.</p>
           <div className="contact-details">
             <div className="detail-item">
